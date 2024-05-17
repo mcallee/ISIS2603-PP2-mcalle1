@@ -1,0 +1,29 @@
+<div class="container">
+    <div class="text-center mb-4">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Star_Wars_Logo.svg/2560px-Star_Wars_Logo.svg.png" alt="Star Wars Logo" class="img-fluid" style="max-width: 200px;">
+    </div>
+    <p>Naves de la rebelión: {{ navesRebelion }}</p>
+    <p>Naves del imperio: {{ navesImperio }}</p>
+    <p>Naves neutrales: {{ navesNeutral }}</p>
+    <h2 class="text-center">Naves</h2>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="list-group">
+          <button type="button" class="list-group-item list-group-item-action" *ngFor="let nave of naves" (click)="onSelect(nave)">
+            <div class="d-flex w-100 justify-content-between">
+              <img [src]="nave.imagen" class="img-thumbnail" alt="{{ nave.nombre }}" style="width: 64px; height: 64px;">
+              <div class="ml-3">
+                <h5 class="mb-1">{{ nave.nombre }}</h5>
+                <p class="mb-1">{{ truncateText(nave.descripcion, 100) }}</p>
+                <small>{{ nave.empresa_fabricacion }}</small>
+              </div>
+            </div>
+          </button>
+        </div>
+      </div>
+      <div class="col-md-6" *ngIf="selectedNave">
+        <app-nave-detail [nave]="selectedNave"></app-nave-detail>
+      </div>
+    </div>
+  </div>
+  

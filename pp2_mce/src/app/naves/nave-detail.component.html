@@ -1,0 +1,22 @@
+<div *ngIf="nave">
+    <h2>{{ nave.nombre }}</h2>
+    <img [src]="nave.imagen" class="img-fluid" alt="{{ nave.nombre }}">
+    <dl class="row">
+      <dt class="col-sm-3">Fabricante</dt>
+      <dd class="col-sm-9">{{ nave.empresa_fabricacion }}</dd>
+  
+      <dt class="col-sm-3">Raza de origen</dt>
+      <dd class="col-sm-9">{{ nave.raza_origen }}</dd>
+  
+      <dt class="col-sm-3">Costo</dt>
+      <dd class="col-sm-9">{{ nave.costo }}</dd>
+  
+      <dt class="col-sm-3">Bando</dt>
+      <dd class="col-sm-9">{{ nave.bando }}</dd>
+  
+      <dt class="col-sm-3">Descripción</dt>
+      <dd class="col-sm-9">{{ nave.descripcion }}</dd>
+    </dl>
+    <hr />
+  </div>
+  
